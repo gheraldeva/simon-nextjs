@@ -2,10 +2,15 @@
 
 import { Accordion, AccordionItem } from "@nextui-org/react";
 import Image from "next/image";
+import MasterData from "../icons/MasterData/page";
+import Laporan from "../icons/Laporan/page";
+import PelaksanaanPKL from "../icons/PelaksanaanPKL/page";
+import Link from "next/link";
+import Home from "../icons/Home/page";
 
 export default function SideBar() {
   return (
-    <div className="w-64 h-[90vh] min-h-max bg-[#1B1D2A] py-10 px-5">
+    <div className="w-[18vw] h-[90vh] fixed top-[10vh] min-h-max bg-[#1B1D2A] py-10 px-4">
       <div className="flex items-center text-white gap-3 mb-5">
         <Image
           src={"/images/profile_admin.svg"}
@@ -18,19 +23,89 @@ export default function SideBar() {
           <h6 className="text-sm">SMKN 2 MATARAM</h6>
         </div>
       </div>
-      <hr />
-
-      <Accordion isCompact>
-        <AccordionItem className="text-white" key="1" aria-label="Accordion 1" title="Accordion 1">
-          <p>almaka</p>
-        </AccordionItem>
-        <AccordionItem className="text-white" key="2" aria-label="Accordion 2" title="Accordion 2">
-          <p>sihsn</p>
-        </AccordionItem>
-        <AccordionItem className="text-white" key="3" aria-label="Accordion 3" title="Accordion 3">
-          <p>maka</p>
-        </AccordionItem>
-      </Accordion>
+      <hr className="mb-8" />
+      <div className="text-lg w-full">
+        <Accordion isCompact>
+          <AccordionItem
+            startContent={<Home />}
+            indicator
+            isDisabled
+            className="text-white"
+            key="0"
+            aria-label="Home"
+            title="Home"
+          ></AccordionItem>
+          <AccordionItem
+            startContent={<MasterData />}
+            className="text-white"
+            key="1"
+            aria-label="MasterData"
+            title="MasterData"
+          >
+            <ul>
+              <hr />
+              <li>
+                <Link href="/masterdata/datasiswa">
+                  <p>Data Siswa</p>
+                </Link>
+              </li>
+              <hr />
+              <li>
+                <Link href="/masterdata/datasiswa">
+                  <p>Data Guru</p>
+                </Link>
+              </li>
+              <hr />
+              <li>
+                <Link href="/masterdata/datasiswa">
+                  <p>Data DU/DI</p>
+                </Link>
+              </li>
+              <hr />
+            </ul>
+          </AccordionItem>
+          <AccordionItem
+            startContent={<PelaksanaanPKL />}
+            className="text-white"
+            key="2"
+            aria-label="Pelaksanaan PKL"
+            title="Pelaksanaan PKL"
+          >
+            <ul>
+              <hr />
+              <li>
+                <Link href="/masterdata/datasiswa">
+                  <p>Absen Siswa</p>
+                </Link>
+              </li>
+              <hr />
+            </ul>
+          </AccordionItem>
+          <AccordionItem
+            startContent={<Laporan />}
+            className="text-white"
+            key="3"
+            aria-label="Laporan"
+            title="Laporan"
+          >
+            <ul>
+              <hr />
+              <li>
+                <Link href="/masterdata/datasiswa">
+                  <p>Laporan Siswa</p>
+                </Link>
+              </li>
+              <hr />
+              <li>
+                <Link href="/masterlaporan/laporansiswa">
+                  <p>Laporan DU/DI</p>
+                </Link>
+              </li>
+              <hr />
+            </ul>
+          </AccordionItem>
+        </Accordion>
+      </div>
     </div>
   );
 }

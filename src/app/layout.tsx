@@ -3,7 +3,7 @@ import { Montserrat } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar/page";
 import Sidebar from "@/components/SideBar/page";
-import { Providers } from "./providers";
+import Banner from "@/components/Banner/page";
 
 const montserrat = Montserrat({ subsets: ["latin"], weight: ["100","200","300", "400","500","600", "700","800"] });
 
@@ -20,13 +20,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={montserrat.className} suppressHydrationWarning={true}>
-        {/* <Providers> */}
-          <Navbar />
-          <div className="flex">
-            <Sidebar />
-            {children}
+          <div className="bg-bgcolor">
+            <Navbar />
+            <div className="flex">
+              <Sidebar />
+              {children}
+            </div>
           </div>
-        {/* </Providers> */}
       </body>
     </html>
   );

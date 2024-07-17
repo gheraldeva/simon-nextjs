@@ -13,6 +13,7 @@ const config: Config = {
       colors:{
         'left-linear' : '#37A3FE',
         'right-linear' : '#2995F3',
+        'bgcolor' : '#EAEAEA',
       },
       spacing:{
         '18' : '4.5rem',
