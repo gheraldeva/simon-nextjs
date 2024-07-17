@@ -19,8 +19,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={montserrat.className} suppressHydrationWarning={true}>
-          <div className="bg-bgcolor">
+      <body className={montserrat.className} style={{backgroundColor: "#EAEAEA"}} suppressHydrationWarning={true}>
+          <div>
             <Navbar />
             <div className="flex">
               <Sidebar />
