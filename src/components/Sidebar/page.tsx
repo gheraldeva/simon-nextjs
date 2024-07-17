@@ -24,7 +24,7 @@ export default function SideBar() {
         </div>
       </div>
       <hr className="mb-8" />
-      <div className="text-lg w-full">
+      <div className="lg:text-lg md:text-base sm:text-sm w-full">
         <Accordion isCompact>
           <AccordionItem
             startContent={<Home />}

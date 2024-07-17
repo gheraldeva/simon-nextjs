@@ -1,13 +1,18 @@
 import Banner from "@/components/Banner/page";
+import WhiteTemplate from "@/components/WhiteTemplate/page";
 import Image from "next/image";
+
 
 export default function Home() {
   return (
     <div>
       <Banner title="Home" />
-      <div className="bg-white h-screen mt-[24vh] ml-[21vw] p-7 shadow-md">
-        <p>Hello World</p>
-      </div>
+      <WhiteTemplate>
+        <div className="mx-16">
+          <h1 className="text-center text-2xl mb-5">Selamat Datang di Aplikasi <br /> Monitoring PKL admin <strong>SMKN 2 MATARAM</strong></h1>
+          <Image src="/images/welcome.png" alt="welcome" width={1000} height={200} className="w-full" />
+        </div>
+      </WhiteTemplate>
     </div>
   );
 }
