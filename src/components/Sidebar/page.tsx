@@ -10,7 +10,7 @@ import Home from "../icons/Home/page";
 
 export default function SideBar() {
   return (
-    <div className="w-[18vw] h-[90vh] fixed top-[10vh] min-h-max bg-[#1B1D2A] py-10 px-4">
+    <div className="w-[18%] h-[100%] fixed top-[10vh] min-h-max bg-[#1B1D2A] py-10 px-4">
       <div className="flex items-center text-white gap-3 mb-5">
         <Image
           src={"/images/profile_admin.svg"}
