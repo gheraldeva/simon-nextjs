@@ -4,7 +4,7 @@ import WhiteTemplate from "@/components/WhiteTemplate/page";
 
 export default function TambahData () {
     return (
-        <div>
+        <div className="w-full">
             <Banner title="Tambah Data Siswa" />
             <WhiteTemplate>
                 <TambahDataSiswa />
