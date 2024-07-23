@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
+
 export default function Navbar() {
     return (
         <nav className="bg-gradient-to-r fixed w-[100%] from-right-linear px-16 to-left-linear h-[10vh] flex items-center justify-between p-1">
