@@ -16,7 +16,8 @@ const config: Config = {
         'bgcolor' : '#EAEAEA',
       },
       spacing:{
-        '18' : '4.5rem',
+        '18' : '4.5rem', 
+        '100': '53rem'
       }
     },
     darkMode: "class",
