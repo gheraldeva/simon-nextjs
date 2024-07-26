@@ -12,6 +12,12 @@ export default function Navbar() {
                     <p className="text-white text-[0.6rem]">Solusinya PKL!</p>
                 </div>
 
+                <div className="flex flex-row">
+                    <Image className="ml-100" src={"/images/bell.svg"} alt="bell logo" width="20" height="20" />
+                    <Image className="ml-5" src={"/images/profile_icon.svg"} alt="profile and arrow" width="20" height="20" />
+                    <Image className="ml-1  " src={"/images/arrow.svg"} alt="profile and arrow" width="15" height="15" />
+                </div>
+
             </div>
 
         </nav>
