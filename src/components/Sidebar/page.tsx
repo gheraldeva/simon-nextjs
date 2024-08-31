@@ -7,7 +7,7 @@ import Laporan from "../icons/Laporan/page";
 import PelaksanaanPKL from "../icons/PelaksanaanPKL/page";
 import Link from "next/link";
 import Home from "../icons/Home/page";
-import {SideArrow} from "../icons/SideArrow/page";
+import { SideArrow } from "../icons/SideArrow/page";
 import ArrowDown from "../icons/ArrowDown/page";
 
 export default function SideBar() {
@@ -54,13 +54,13 @@ export default function SideBar() {
               </li>
               <hr />
               <li>
-                <Link href="/masterdata/datasiswa">
+                <Link href="/masterdata/dataguru">
                   <p>Data Guru</p>
                 </Link>
               </li>
               <hr />
               <li>
-                <Link href="/masterdata/datasiswa">
+                <Link href="/masterdata/datadudi">
                   <p>Data DU/DI</p>
                 </Link>
               </li>
@@ -91,7 +91,7 @@ export default function SideBar() {
             key="3"
             aria-label="Laporan"
             title="Laporan"
-            indicator={({ isOpen }) => (isOpen ? <ArrowDown /> : <SideArrow />)}  
+            indicator={({ isOpen }) => (isOpen ? <ArrowDown /> : <SideArrow />)}
           >
             <ul>
               <hr />
