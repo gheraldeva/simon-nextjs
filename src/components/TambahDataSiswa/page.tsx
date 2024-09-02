@@ -207,7 +207,7 @@ const TambahDataSiswa: React.FC = () => {
             <input
               type="text"
               id="noTelpon"
-              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg flex-1 p-2.5 dark:placeholder-gray-400"
+              className="mb-14 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg flex-1 p-2.5 dark:placeholder-gray-400"
               placeholder="Masukkan No Telpon..."
               value={formData.noTelpon}
               onChange={handleChange}

@@ -73,7 +73,7 @@ const TambahDataSiswa: React.FC = () => {
 
       <form className="mx-10" onSubmit={handleSubmit}>
         <div className="">
-          <div className="flex items-center">
+          <div className="flex items-center mb-20">
             <label
               htmlFor="name"
               className="font-bold text-gray-900 dark:text-black w-1/4 text-right mr-4"
@@ -174,7 +174,7 @@ const TambahDataSiswa: React.FC = () => {
               required
             />
           </div>
-          <div className="flex items-center mt-20 bg-green-400">
+          <div className="flex items-center space-x-4">
             <label
               htmlFor="jenisKelamin"
               className="font-bold text-gray-900 dark:text-black w-1/4 text-right mr-4"
