@@ -17,7 +17,7 @@ const config: Config = {
       },
       spacing:{
         '18' : '4.5rem', 
-        '100': '53rem'
+        '100': '50rem'
       }
     },
     darkMode: "class",

@@ -6,24 +6,20 @@ import * as yup from "yup";
 
 interface FormData {
   name: string;
-  nis: string;
+  nip: string;
   tempatLahir: string;
   tanggalLahir: string;
   agama: string;
-  kelas: string;
-  jurusan: string;
   noTelpon: string;
   jenisKelamin: string;
 }
 
 const schema = yup.object().shape({
   name: yup.string().required("Username is required"),
-  nis: yup.string().required(),
+  nip: yup.string().required(),
   tempatLahir: yup.string().required(),
   tanggalLahir: yup.string().required(),
   agama: yup.string().required(),
-  kelas: yup.string().required(),
-  jurusan: yup.string().required(),
   noTelpon: yup.string().required(),
   jenisKelamin: yup.string().required(),
 });
@@ -31,12 +27,10 @@ const schema = yup.object().shape({
 const TambahDataSiswa: React.FC = () => {
   const [formData, setFormData] = useState<FormData>({
     name: "",
-    nis: "",
+    nip: "",
     tempatLahir: "",
     tanggalLahir: "",
     agama: "",
-    kelas: "",
-    jurusan: "",
     noTelpon: "",
     jenisKelamin: "",
   });
@@ -78,8 +72,8 @@ const TambahDataSiswa: React.FC = () => {
       <hr className="h-px my-3 bg-gray-200 border-0 dark:bg-gray-400" />
 
       <form className="mx-10" onSubmit={handleSubmit}>
-        <div className="space-y-1.5">
-          <div className="flex items-center">
+        <div className="">
+          <div className="flex items-center mb-20">
             <label
               htmlFor="name"
               className="font-bold text-gray-900 dark:text-black w-1/4 text-right mr-4"
@@ -98,17 +92,17 @@ const TambahDataSiswa: React.FC = () => {
           </div>
           <div className="flex items-center">
             <label
-              htmlFor="nis"
+              htmlFor="nip"
               className="font-bold text-gray-900 dark:text-black w-1/4 text-right mr-4"
             >
-              NIS :
+              NIP :
             </label>
             <input
               type="text"
-              id="nis"
+              id="nip"
               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg flex-1 p-2.5 dark:placeholder-gray-400"
-              placeholder="Masukkan NIS..."
-              value={formData.nis}
+              placeholder="Masukkan NIP..."
+              value={formData.nip}
               onChange={handleChange}
               required
             />
@@ -165,40 +159,6 @@ const TambahDataSiswa: React.FC = () => {
           </div>
           <div className="flex items-center">
             <label
-              htmlFor="kelas"
-              className="font-bold text-gray-900 dark:text-black w-1/4 text-right mr-4"
-            >
-              Kelas :
-            </label>
-            <input
-              type="text"
-              id="kelas"
-              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg flex-1 p-2.5 dark:placeholder-gray-400"
-              placeholder="Masukkan Kelas..."
-              value={formData.kelas}
-              onChange={handleChange}
-              required
-            />
-          </div>
-          <div className="flex items-center">
-            <label
-              htmlFor="jurusan"
-              className="font-bold text-gray-900 dark:text-black w-1/4 text-right mr-4"
-            >
-              Jurusan :
-            </label>
-            <input
-              type="text"
-              id="jurusan"
-              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg flex-1 p-2.5 dark:placeholder-gray-400"
-              placeholder="Masukkan Jurusan..."
-              value={formData.jurusan}
-              onChange={handleChange}
-              required
-            />
-          </div>
-          <div className="flex items-center">
-            <label
               htmlFor="noTelpon"
               className="font-bold text-gray-900 dark:text-black w-1/4 text-right mr-4"
             >
@@ -207,7 +167,7 @@ const TambahDataSiswa: React.FC = () => {
             <input
               type="text"
               id="noTelpon"
-              className="mb-14 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg flex-1 p-2.5 dark:placeholder-gray-400"
+              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg flex-1 p-2.5 dark:placeholder-gray-400"
               placeholder="Masukkan No Telpon..."
               value={formData.noTelpon}
               onChange={handleChange}
