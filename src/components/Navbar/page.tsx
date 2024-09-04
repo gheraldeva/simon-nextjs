@@ -25,7 +25,7 @@ export default function Navbar() {
                         </div>
                     </DropdownTrigger>
                     <DropdownMenu aria-label="Static Actions" className="w-[100px] rounded-md bg-white">
-                        <DropdownItem key="new">Log In</DropdownItem>
+                        <DropdownItem href="/login" key="new">Log In</DropdownItem>
                         <DropdownItem key="copy">Register</DropdownItem>
                     </DropdownMenu>
                 </Dropdown>
