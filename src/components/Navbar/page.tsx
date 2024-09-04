@@ -1,3 +1,6 @@
+"use client";
+
+import { Dropdown, DropdownItem, DropdownMenu, DropdownTrigger } from "@nextui-org/react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -14,8 +17,18 @@ export default function Navbar() {
             </div>
             <div className="flex flex-row">
                 <Image className="ml-100" src={"/images/bell.svg"} alt="bell logo" width="20" height="20" />
-                <Image className="ml-5" src={"/images/profile_icon.svg"} alt="profile and arrow" width="20" height="20" />
-                <Image className="ml-1  " src={"/images/arrow.svg"} alt="profile and arrow" width="15" height="15" />
+                <Dropdown>
+                    <DropdownTrigger>
+                        <div className="cursor-pointer flex items-center">
+                            <Image className="ml-5" src={"/images/profile_icon.svg"} alt="profile and arrow" width="20" height="20" />
+                            <Image className="ml-1  " src={"/images/arrow.svg"} alt="profile and arrow" width="15" height="15" />
+                        </div>
+                    </DropdownTrigger>
+                    <DropdownMenu aria-label="Static Actions" className="w-[100px] rounded-md bg-white">
+                        <DropdownItem key="new">Log In</DropdownItem>
+                        <DropdownItem key="copy">Register</DropdownItem>
+                    </DropdownMenu>
+                </Dropdown>
             </div>
 
 
