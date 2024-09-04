@@ -10,9 +10,9 @@ export const SideArrow = (props:any) => (
     <path
       d="M1.5 1L6.5 6L1.5 11"
       stroke="#EAEAEA"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
   </svg>
 );
