@@ -29,7 +29,7 @@ const LoginSiswa = () => {
   };
 
   return (
-    <div className="flex justify-center items-center relative h-screen bg-[url('/images/LoginBG.png')] bg-cover bg-center bg-no-repeat">
+    <div className="flex justify-center items-center relative w-screen h-screen bg-[url('/images/LoginBG.png')] bg-cover bg-center bg-no-repeat">
       <div className="bg-white p-8 rounded-3xl">
         <h1 className="text-accentColor text-4xl font-bold mb-7">Login</h1>
         <div className="flex items-center justify-center">
@@ -68,7 +68,7 @@ const LoginSiswa = () => {
                 height={30}
                 alt="Toggle visibility"
                 className="ml-[85%] mt-[-13%] cursor-pointer"
-                onClick={() => setPasswordVisible(!passwordVisible)}
+                onClick={() => setPasswordVisible(!passwordVisible) }
               />
               <p className="text-red-500 mt-3">{errors.password?.message}</p>
             </div>

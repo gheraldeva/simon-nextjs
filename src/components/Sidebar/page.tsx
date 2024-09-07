@@ -26,7 +26,7 @@ export default function SideBar() {
         </div>
       </div>
       <hr className="mb-8" />
-      <div className="lg:text-lg md:text-base sm:text-sm w-full">
+      <div className="w-full">
         <Accordion isCompact>
           <AccordionItem
             startContent={<Home />}
@@ -45,11 +45,11 @@ export default function SideBar() {
             title="MasterData"
             indicator={({ isOpen }) => (isOpen ? <ArrowDown /> : <SideArrow />)}
           >
-            <ul>
+            <ul className="">
               <hr />
               <li>
                 <Link href="/masterdata/datasiswa">
-                  <p>Data Siswa</p>
+                  <p className="">Data Siswa</p>
                 </Link>
               </li>
               <hr />
