@@ -1,4 +1,4 @@
-import LoginSiswa from "@/components/LoginSiswa";
+import LoginSiswa from "@/components/LoginSiswa/page";
 import React from "react";
 
 const LoginSiswaPage = () => {

@@ -49,7 +49,7 @@ export default function SideBar() {
               <hr />
               <li>
                 <Link href="/masterdata/datasiswa">
-                  <p>Data Siswa</p>
+                  <p className="text-white">Data Siswa</p>
                 </Link>
               </li>
               <hr />
