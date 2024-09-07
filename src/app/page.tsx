@@ -1,7 +1,13 @@
 import Banner from "@/components/Banner/page";
 import WhiteTemplate from "@/components/WhiteTemplate/page";
 import Image from "next/image";
+import type { Metadata } from "next";
 
+export const metadata: Metadata = {
+  title: "Home",
+  description: "Monitoring PKL admin SMKN 2 Mataram",
+  authors: [{ name: "Simon PKL" }],
+}
 
 export default function Home() {
   return (
