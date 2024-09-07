@@ -35,14 +35,14 @@ export default function SideBar() {
             className="text-white"
             key="0"
             aria-label="Home"
-            title="Home"
+            title={<p className="text-white">Home</p>}
           ></AccordionItem>
           <AccordionItem
             startContent={<MasterData />}
             className="text-white"
             key="1"
             aria-label="MasterData"
-            title="MasterData"
+            title={<p className="text-white">MasterData</p>}
             indicator={({ isOpen }) => (isOpen ? <ArrowDown /> : <SideArrow />)}
           >
             <ul className="">
@@ -72,7 +72,7 @@ export default function SideBar() {
             className="text-white"
             key="2"
             aria-label="Pelaksanaan PKL"
-            title="Pelaksanaan PKL"
+            title={<p className="text-white">Pelaksanaan PKL</p>}
             indicator={({ isOpen }) => (isOpen ? <ArrowDown /> : <SideArrow />)}
           >
             <ul>
@@ -90,7 +90,7 @@ export default function SideBar() {
             className="text-white"
             key="3"
             aria-label="Laporan"
-            title="Laporan"
+            title={<p className="text-white">Laporan</p>}
             indicator={({ isOpen }) => (isOpen ? <ArrowDown /> : <SideArrow />)}
           >
             <ul>
