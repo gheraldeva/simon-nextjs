@@ -1,5 +1,5 @@
 import type { Config } from "tailwindcss";
-import {nextui} from '@nextui-org/react'  
+import { nextui } from "@nextui-org/react";
 
 const config: Config = {
   content: [
@@ -10,19 +10,25 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      colors:{
-        'left-linear' : '#37A3FE',
-        'right-linear' : '#2995F3',
-        'bgcolor' : '#EAEAEA',
+      colors: {
+        'left-linear': '#37A3FE',
+        'right-linear': '#2995F3',
+        'bgcolor': '#EAEAEA',
+        accentColor: "#38A3FF",
+        primaryColor: "#0275D8",
+        lightGray: "#EEEEEE",
       },
-      spacing:{
-        '18' : '4.5rem', 
-        '100': '50rem'
-      }
+      zIndex: {
+        "-10": "-10",
+      },
+      spacing: {
+        '18': '4.5rem',
+        '100': '50rem',
+      },
     },
-    darkMode: "class",
-    plugins: [nextui()],
   },
-  plugins: [],
+  darkMode: "class", // Dark mode should be outside the theme object
+  plugins: [nextui()], // Plugins should also be outside the theme object
 };
+
 export default config;

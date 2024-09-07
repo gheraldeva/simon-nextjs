@@ -5,7 +5,10 @@ import Navbar from "@/components/Navbar/page";
 import Sidebar from "@/components/Sidebar/page";
 import Banner from "@/components/Banner/page";
 
-const montserrat = Montserrat({ subsets: ["latin"], weight: ["100","200","300", "400","500","600", "700","800"] });
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800"],
+});
 
 export const metadata: Metadata = {
   title: "Simon PKL",
@@ -19,14 +22,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={montserrat.className} style={{backgroundColor: "#EAEAEA"}} suppressHydrationWarning={true}>
-          <div>
-            <Navbar />
-            <div className="flex">
-              <Sidebar />
-              {children}
-            </div>
+      <body
+        className={montserrat.className}
+        style={{ backgroundColor: "#EAEAEA" }}
+        suppressHydrationWarning={true}
+      >
+        <div>
+          <Navbar />
+          <div className="flex">
+            <Sidebar />
+            {children}
           </div>
+        </div>
       </body>
     </html>
   );
