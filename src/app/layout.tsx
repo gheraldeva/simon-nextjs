@@ -1,11 +1,11 @@
 "use client";
 
 // import type { Metadata } from "next";
-import { Montserrat } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/Navbar/page";
-import Sidebar from "@/components/Sidebar/page";
+import { Montserrat } from "next/font/google";
+import Navbar from "@/components/admin/Navbar";
 import { usePathname } from "next/navigation";
+import Sidebar from "@/components/admin/SideBar";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -24,7 +24,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const pathname = usePathname()
+  const pathname = usePathname();
   return (
     <html lang="en">
       <body
@@ -35,7 +35,7 @@ export default function RootLayout({
         <div>
           {!disableNavSidebar.includes(pathname) && <Navbar />}
           <div className="flex">
-            {!disableNavSidebar.includes(pathname) && <Sidebar  />}
+            {!disableNavSidebar.includes(pathname) && <Sidebar />}
             {children}
           </div>
         </div>

@@ -13,7 +13,7 @@ const schema = yup.object().shape({
   password: yup.string().required("password is required"),
 });
 
-const LoginSiswa = () => {
+const Login = () => {
   const [passwordVisible, setPasswordVisible] = useState(false);
 
   const {
@@ -84,4 +84,4 @@ const LoginSiswa = () => {
   );
 };
 
-export default LoginSiswa;
+export default Login;
