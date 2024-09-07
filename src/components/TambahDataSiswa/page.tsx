@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 // src/components/TambahDataSiswa.tsx
 import React, { useState } from "react";
 import * as yup from "yup";
@@ -260,12 +261,13 @@ const TambahDataSiswa: React.FC = () => {
           </div>
 
           <div className="flex justify-end space-x-4 mt-3">
-            <button
+            <Link
+              href={"/masterdata/datasiswa"}
               type="button"
               className="p-3 rounded-lg border border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white"
             >
               Batalkan
-            </button>
+            </Link>
             <button
               type="submit"
               className="p-3 rounded-lg border border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white"

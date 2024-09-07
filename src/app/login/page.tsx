@@ -45,8 +45,8 @@ export default function Login() {
   };
 
   return (
-    <div className="flex justify-center ml-[20vw] items-center h-screen">
-      <form onSubmit={handleSubmit(onSubmit)} className="p-4 border rounded">
+    <div className="flex justify-center w-[60vw] ml-[20vw] items-center h-screen">
+      <form onSubmit={handleSubmit(onSubmit)} className="p-16 bg-white border rounded-lg">
         <h2 className="text-2xl mb-4">Login</h2>
 
         {errorMessage && <p className="text-red-500">{errorMessage}</p>}
