@@ -10,8 +10,8 @@ export default function Laporan() {
       <path
         d="M17 8V5C17 3.89543 16.1046 3 15 3H3C1.89543 3 1 3.89543 1 5V8M17 8V17C17 18.1046 16.1046 19 15 19H3C1.89543 19 1 18.1046 1 17V8M17 8H1M5 1V5M13 1V5"
         stroke="#EAEAEA"
-        stroke-width="1.5"
-        stroke-linecap="round"
+        strokeWidth="1.5"
+        strokeLinecap="round"
       />
       <path
         d="M5.5 10H3.5C3.22386 10 3 10.2239 3 10.5V12.5C3 12.7761 3.22386 13 3.5 13H5.5C5.77614 13 6 12.7761 6 12.5V10.5C6 10.2239 5.77614 10 5.5 10Z"

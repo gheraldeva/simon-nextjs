@@ -1,6 +1,7 @@
 "use client";
 
 import Banner from "@/components/Banner/page";
+import { Tambahicon } from "@/components/icons/icons";
 import WhiteTemplate from "@/components/WhiteTemplate/page";
 import { get } from "@/utils/get";
 import {
@@ -11,11 +12,15 @@ import {
   TableHeader,
   TableRow,
 } from "@nextui-org/react";
+import Link from "next/link";
 
 export default function DataSiswa() {
   return (
     <div>
       <Banner title="Data Siswa" />
+      <Link href={"/masterdata/datasiswa/tambahdata"} className="absolute bottom-10 right-10 p-2 rounded-full bg-blue-500">
+        <Tambahicon />
+      </Link>
       <WhiteTemplate>
         <Table aria-label="Example static collection table">
           <TableHeader>
