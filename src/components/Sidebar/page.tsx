@@ -10,7 +10,7 @@ import Home from "../icons/Home/page";
 import { SideArrow } from "../icons/SideArrow/page";
 import ArrowDown from "../icons/ArrowDown/page";
 
-export default function SideBar() {
+export function SidebarAdmin() {
   return (
     <div className="w-[18%] h-[100%] fixed top-[10vh] min-h-max bg-[#1B1D2A] py-10 px-4">
       <div className="flex items-center text-white gap-3 mb-5">
@@ -113,4 +113,63 @@ export default function SideBar() {
       </div>
     </div>
   );
+}
+
+
+export function SidebarSiswa() {
+  return (
+    <div className="w-[18%] h-[90vh] fixed bottom-0 bg-[#1B1D2A] py-10 px-4">
+      <div className="flex items-center text-white gap-3 mb-5">
+        <img
+          src="/images/profile_admin.svg"
+          alt="Admin Logo"
+          className="w-12 h-12"
+        />
+        <div>
+          <h3 className="text-lg font-semibold">Siswa</h3>
+          <h6 className="text-sm">SMKN 2 MATARAM</h6>
+        </div>
+      </div>
+      <hr className="mb-8" />
+      <ul className="text-white space-y-6">
+        <li>
+          <Link href="/home" className="hover:text-gray-400">
+            <div className="flex items-center gap-3">
+              <Home />
+              <span>Home</span>
+            </div>
+          </Link>
+        </li>
+        <li>
+          <Link href="/laporan" className="hover:text-gray-400">
+            <div className="flex items-center gap-3">
+              <Laporan />
+              <span>Laporan</span>
+            </div>
+          </Link>
+        </li>
+        <li>
+          <Link href="/profile" className="hover:text-gray-400">
+            <div className="flex items-center gap-3">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth="2"
+                stroke="currentColor"
+                className="w-6 h-6"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M5.121 18.364A9 9 0 0112 15c2.39 0 4.584.93 6.121 2.364M15 11a3 3 0 11-6 0 3 3 0 016 0zm-3 9a9 9 0 110-18 9 9 0 010 18z"
+                />
+              </svg>
+              <span>Profile</span>
+            </div>
+          </Link>
+        </li>
+      </ul>
+    </div>
+  )
 }
