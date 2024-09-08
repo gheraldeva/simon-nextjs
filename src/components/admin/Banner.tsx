@@ -9,7 +9,7 @@ export default function Banner({ title }: { title: string }) {
           <p className="text-sm">Monitoring PKL Siswa SMKN 2 Mataram</p>
         </div>
         <Image
-          src={"/images/banner.png"}
+          src={"/images/bannerSMKN2.png"}
           alt="logo"
           width={100}
           height={100}

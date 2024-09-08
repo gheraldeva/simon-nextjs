@@ -61,8 +61,8 @@ const Login = () => {
               <Image
                 src={
                   passwordVisible
-                    ? "/images/eye-open.svg"
-                    : "/images/eye-closed.svg"
+                    ? "/images/eyeOpened.svg"
+                    : "/images/eyeClosed.svg"
                 }
                 width={30}
                 height={30}
