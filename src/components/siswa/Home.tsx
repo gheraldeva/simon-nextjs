@@ -1,9 +1,14 @@
 import React from 'react'
 
-const page = () => {
+const SiswaHome = () => {
   return (
-    <div>page</div>
+    <div className=''>
+      <div className="">
+        <h1>Selamat Datang, Siswa</h1>
+        <p>NISN : 21414125125</p>
+      </div>
+    </div>
   )
 }
 
-export default page
+export default SiswaHome

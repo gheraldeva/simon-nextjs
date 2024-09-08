@@ -9,7 +9,7 @@ import Image from "next/image";
 
 // Skema yup
 const schema = yup.object().shape({
-  username: yup.string().required("username is required"),
+  textBody: yup.string().required("username is required"),
   password: yup.string().required("password is required"),
 });
 
@@ -43,9 +43,9 @@ const Login = () => {
                 type="text"
                 placeholder="username"
                 className="bg-lightGray p-4 pr-28 rounded-full"
-                {...register("username")}
+                {...register("textBody")}
               />
-              <p className="text-red-500">{errors.username?.message}</p>
+              <p className="text-red-500">{errors.textBody?.message}</p>
             </div>
             <div className="">
               <label className="block mb-2 text-accentColor" htmlFor="id">
@@ -61,8 +61,8 @@ const Login = () => {
               <Image
                 src={
                   passwordVisible
-                    ? "/images/eyeOpened.svg"
-                    : "/images/eyeClosed.svg"
+                    ? "/images/eye-open.svg"
+                    : "/images/eye-closed.svg"
                 }
                 width={30}
                 height={30}
