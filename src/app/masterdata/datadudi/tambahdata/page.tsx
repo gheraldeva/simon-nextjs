@@ -1,6 +1,6 @@
-import TambahDataDudi from "@/components/TambahDataDudi/TambahDataDudi";
-import Banner from "@/components/Banner/page";
-import WhiteTemplate from "@/components/WhiteTemplate/WhiteTemplate";
+import TambahDataDudi from "@/components/admin/TambahDataDudi";
+import Banner from "@/components/admin/Banner";
+import WhiteTemplate from "@/components/WhiteTemplate";
 
 export default function TambahData() {
   return (

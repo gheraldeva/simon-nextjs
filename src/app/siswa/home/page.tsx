@@ -3,7 +3,7 @@ import React from 'react'
 
 const HomeSiswaPage = () => {
   return (
-    <div>
+    <div className='h-[100%]'>
         <SiswaHome />
     </div>
   )

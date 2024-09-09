@@ -1,8 +1,8 @@
 // pages/index.tsx
 import React from "react";
-import Card from "@/components/DataDudi/DataDudi";
-import WhiteTemplate from "@/components/WhiteTemplate/WhiteTemplate";
-import Banner from "@/components/Banner/page";
+import Card from "@/components/admin/DataDudi";
+import WhiteTemplate from "@/components/WhiteTemplate";
+import Banner from "@/components/admin/Banner";
 
 const dataDudi: React.FC = () => {
   const cards = [

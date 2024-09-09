@@ -1,6 +1,6 @@
-import TambahDataGuruPembimbing from "@/components/TambahDataGuruPembimbing/TambahDataGuruPembimbinf";
-import Banner from "@/components/Banner/page";
-import WhiteTemplate from "@/components/WhiteTemplate/WhiteTemplate";
+import TambahDataGuruPembimbing from "@/components/admin/TambahDataGuruPembimbing";
+import Banner from "@/components/admin/Banner";
+import WhiteTemplate from "@/components/WhiteTemplate";
 
 export default function TambahData() {
   return (

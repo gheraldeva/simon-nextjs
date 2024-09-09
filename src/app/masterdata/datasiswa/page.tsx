@@ -1,8 +1,8 @@
 "use client";
 
-import Banner from "@/components/Banner/page";
+import Banner from "@/components/admin/Banner";
 import { Tambahicon } from "@/components/icons/icons";
-import WhiteTemplate from "@/components/WhiteTemplate/WhiteTemplate";
+import WhiteTemplate from "@/components/WhiteTemplate";
 import { get } from "@/utils/get";
 import {
   Table,

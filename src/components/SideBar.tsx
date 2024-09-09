@@ -121,9 +121,12 @@ export function SidebarSiswa() {
     <div className="w-[18%] h-[90vh] fixed bottom-0 bg-[#1B1D2A] py-10 px-4">
       <div className="flex items-center text-white gap-3 mb-5">
         <Image
-          src="/images/profile_admin.svg"
+          src="/images/profileAdmin.svg"
           alt="Admin Logo"
+          width={45}
+          height={60}
           className="w-12 h-12"
+          
         />
         <div>
           <h3 className="text-lg font-semibold">Siswa</h3>
