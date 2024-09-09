@@ -126,7 +126,6 @@ export function SidebarSiswa() {
           width={45}
           height={60}
           className="w-12 h-12"
-          
         />
         <div>
           <h3 className="text-lg font-semibold">Siswa</h3>

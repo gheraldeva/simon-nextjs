@@ -1,12 +1,15 @@
-import SiswaHome from '@/components/siswa/Home'
-import React from 'react'
+import SiswaHome from "@/components/siswa/Home";
+import React from "react";
+import WhiteTemplate from "@/components/WhiteTemplate";
 
 const HomeSiswaPage = () => {
   return (
-    <div className='h-[100%]'>
+    <div className="w-[100%]">
+      <WhiteTemplate>
         <SiswaHome />
+      </WhiteTemplate>
     </div>
-  )
-}
+  );
+};
 
-export default HomeSiswaPage
+export default HomeSiswaPage;
