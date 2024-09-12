@@ -18,16 +18,21 @@ const montserrat = Montserrat({
 // };
 
 const disableNavSidebar = ["/login", "/register"];
+const siswaPagesWithoutNavSidebar = ["/siswa/profile"];
 
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const pathname = usePathname();
   const role: string = "admin";
 
+  const pathname = usePathname();
   const isSiswaPage = pathname.startsWith("/siswa/");
+  const isDisableNavSidebar = disableNavSidebar.includes(pathname);
+  const isSiswaPageWithoutNavSidebar =
+    siswaPagesWithoutNavSidebar.includes(pathname);
+
   return (
     <html lang="en">
       <body
@@ -35,32 +40,17 @@ export default function RootLayout({
         // style={{ backgroundColor: "#EAEAEA" }}
         suppressHydrationWarning={true}
       >
-        <div>
-          {isSiswaPage && (
-            <>
-              <Navbar />
-              <aside>{SidebarSiswa()}</aside>
-            </>
-          )}
-        </div>
-        <div>
-          {!disableNavSidebar.includes(pathname)}
-          {!disableNavSidebar.includes(pathname) && <Navbar />}
-          <div className="flex">
-            {!disableNavSidebar.includes(pathname) && <SidebarAdmin />}
-            {children}
-          </div>
-        </div>
-        <div>
-          {!disableNavSidebar.includes(pathname) && !isSiswaPage && <Navbar />}
-          <div className="flex">
-            {!disableNavSidebar.includes(pathname) && !isSiswaPage && (
-              <SidebarAdmin />
-            )}
-            {isSiswaPage && <SidebarSiswa />}
-            {children}
-          </div>
-        </div>
+        {!isDisableNavSidebar && !isSiswaPageWithoutNavSidebar && (
+          <>
+            <Navbar />
+            <div className="flex">
+              {isSiswaPage ? <SidebarSiswa /> : <SidebarAdmin />}
+              {children}
+            </div>
+          </>
+        )}
+
+        {(isDisableNavSidebar || isSiswaPageWithoutNavSidebar) && children}
       </body>
     </html>
   );

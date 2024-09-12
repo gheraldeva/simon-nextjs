@@ -10,6 +10,10 @@ import Home from "./icons/Home/page";
 import { SideArrow } from "./icons/SideArrow/page";
 import ArrowDown from "./icons/ArrowDown/page";
 
+interface SideBarProps {
+  className?: string;
+}
+
 export function SidebarAdmin() {
   return (
     <div className="w-[18%] h-[100%] fixed top-[10vh] min-h-max bg-[#1B1D2A] py-10 px-4">
@@ -116,9 +120,11 @@ export function SidebarAdmin() {
   );
 }
 
-export function SidebarSiswa() {
+export const SidebarSiswa: React.FC<SideBarProps> = ({ className }) => {
   return (
-    <div className="w-[18%] h-[90vh] fixed bottom-0 bg-[#1B1D2A] py-10 px-4">
+    <div
+      className={`w-[18%] h-[90vh] fixed bottom-0 bg-[#1B1D2A] py-10 px-4 ${className}`}
+    >
       <div className="flex items-center text-white gap-3 mb-5">
         <Image
           src="/images/profileAdmin.svg"
@@ -174,4 +180,4 @@ export function SidebarSiswa() {
       </ul>
     </div>
   );
-}
+};
