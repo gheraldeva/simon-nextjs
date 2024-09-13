@@ -1,10 +1,10 @@
 "use client";
 
 // import type { Metadata } from "next";
-import { Montserrat } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/Navbar/page";
-import {SidebarAdmin, SidebarSiswa} from "@/components/Sidebar/page";
+import { Montserrat } from "next/font/google";
+import Navbar from "@/components/admin/Navbar";
+import { SidebarAdmin, SidebarSiswa } from "@/components/SideBar";
 import { usePathname } from "next/navigation";
 
 const montserrat = Montserrat({
@@ -18,29 +18,39 @@ const montserrat = Montserrat({
 // };
 
 const disableNavSidebar = ["/login", "/register"];
+const siswaPagesWithoutNavSidebar = ["/siswa/profile"];
 
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const pathname = usePathname()
-  const role: string = "admin"
+  const role: string = "admin";
+
+  const pathname = usePathname();
+  const isSiswaPage = pathname.startsWith("/siswa/");
+  const isDisableNavSidebar = disableNavSidebar.includes(pathname);
+  const isSiswaPageWithoutNavSidebar =
+    siswaPagesWithoutNavSidebar.includes(pathname);
+
   return (
     <html lang="en">
       <body
         className={montserrat.className}
-        style={{ backgroundColor: "#EAEAEA" }}
+        // style={{ backgroundColor: "#EAEAEA" }}
         suppressHydrationWarning={true}
       >
-        <div>
-          {(!disableNavSidebar.includes(pathname))}
-          {!disableNavSidebar.includes(pathname) && <Navbar /> }
-          <div className="flex">
-            {!disableNavSidebar.includes(pathname) ? role == "admi" ? <SidebarAdmin /> : <SidebarSiswa /> : null}
-            {children}
-          </div>
-        </div>
+        {!isDisableNavSidebar && !isSiswaPageWithoutNavSidebar && (
+          <>
+            <Navbar />
+            <div className="flex">
+              {isSiswaPage ? <SidebarSiswa /> : <SidebarAdmin />}
+              {children}
+            </div>
+          </>
+        )}
+
+        {(isDisableNavSidebar || isSiswaPageWithoutNavSidebar) && children}
       </body>
     </html>
   );
