@@ -123,7 +123,7 @@ export function SidebarAdmin() {
 export const SidebarSiswa: React.FC<SideBarProps> = ({ className }) => {
   return (
     <div
-      className={`w-[18%] h-[90vh] fixed bottom-0 bg-[#1B1D2A] py-10 px-4 ${className}`}
+      className={`w-[18%] h-[100vh] fixed bottom-0 bg-[#1B1D2A] py-10 px-4 ${className}`}
     >
       <div className="flex items-center text-white gap-3 mb-5">
         <Image

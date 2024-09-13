@@ -5,9 +5,9 @@ import React from "react";
 
 const pageProfile = () => {
   return (
-    <div className="flex h-screen ">
-      <SidebarSiswa className="flex-shrink-0 w-64 h-full" />
-      <div className="-mt-5.4 flex-1 overflow-hidden">
+    <div className="h-screen">
+      <SidebarSiswa className="h-[100vh]" />
+      <div className="-mt-5.4">
         <WhiteTemplate>
           <Profile />
         </WhiteTemplate>

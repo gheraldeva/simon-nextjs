@@ -28,7 +28,7 @@ export default function RootLayout({
   const role: string = "admin";
 
   const pathname = usePathname();
-  const isSiswaPage = pathname.startsWith("/siswa/");
+  const isSiswaPage = pathname.startsWith("/siswa/profile");
   const isDisableNavSidebar = disableNavSidebar.includes(pathname);
   const isSiswaPageWithoutNavSidebar =
     siswaPagesWithoutNavSidebar.includes(pathname);
