@@ -1,12 +1,12 @@
-import LoginSiswa from "@/components/LoginSiswa";
+import Login from "@/components/Login";
+
 import React from "react";
 
-const LoginSiswaPage = () => {
+const LoginPage = () => {
   return (
     <div>
-      <LoginSiswa />
+      <Login />
     </div>
   );
 };
-
-export default LoginSiswaPage;
+export default LoginPage;

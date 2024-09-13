@@ -1,8 +1,8 @@
 "use client";
 
-import Banner from "@/components/Banner/page";
+import Banner from "@/components/admin/Banner";
 import { Tambahicon } from "@/components/icons/icons";
-import WhiteTemplate from "@/components/WhiteTemplate/page";
+import WhiteTemplate from "@/components/WhiteTemplate";
 import { get } from "@/utils/get";
 import {
   Table,
@@ -18,7 +18,10 @@ export default function DataSiswa() {
   return (
     <div>
       <Banner title="Data Siswa" />
-      <Link href={"/masterdata/datasiswa/tambahdata"} className="absolute bottom-10 right-10 p-2 rounded-full bg-blue-500">
+      <Link
+        href={"/masterdata/datasiswa/tambahdata"}
+        className="absolute bottom-10 right-10 p-2 rounded-full bg-blue-500"
+      >
         <Tambahicon />
       </Link>
       <WhiteTemplate>

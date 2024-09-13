@@ -2,20 +2,24 @@
 
 import { Accordion, AccordionItem } from "@nextui-org/react";
 import Image from "next/image";
-import MasterData from "../icons/MasterData/page";
-import Laporan from "../icons/Laporan/page";
-import PelaksanaanPKL from "../icons/PelaksanaanPKL/page";
+import MasterData from "./icons/MasterData/page";
+import Laporan from "./icons/Laporan/page";
+import PelaksanaanPKL from "./icons/PelaksanaanPKL/page";
 import Link from "next/link";
-import Home from "../icons/Home/page";
-import { SideArrow } from "../icons/SideArrow/page";
-import ArrowDown from "../icons/ArrowDown/page";
+import Home from "./icons/Home/page";
+import { SideArrow } from "./icons/SideArrow/page";
+import ArrowDown from "./icons/ArrowDown/page";
+
+interface SideBarProps {
+  className?: string;
+}
 
 export function SidebarAdmin() {
   return (
     <div className="w-[18%] h-[100%] fixed top-[10vh] min-h-max bg-[#1B1D2A] py-10 px-4">
       <div className="flex items-center text-white gap-3 mb-5">
         <Image
-          src={"/images/profile_admin.svg"}
+          src={"/images/profileAdmin.svg"}
           alt="logo"
           width={45}
           height={60}
@@ -49,6 +53,7 @@ export function SidebarAdmin() {
               <hr />
               <li>
                 <Link href="/masterdata/datasiswa">
+                  <p className="text-white">Data Siswa</p>
                   <p className="">Data Siswa</p>
                 </Link>
               </li>
@@ -115,14 +120,17 @@ export function SidebarAdmin() {
   );
 }
 
-
-export function SidebarSiswa() {
+export const SidebarSiswa: React.FC<SideBarProps> = ({ className }) => {
   return (
-    <div className="w-[18%] h-[90vh] fixed bottom-0 bg-[#1B1D2A] py-10 px-4">
+    <div
+      className={`w-[18%] h-[90vh] fixed bottom-0 bg-[#1B1D2A] py-10 px-4 ${className}`}
+    >
       <div className="flex items-center text-white gap-3 mb-5">
-        <img
-          src="/images/profile_admin.svg"
+        <Image
+          src="/images/profileAdmin.svg"
           alt="Admin Logo"
+          width={45}
+          height={60}
           className="w-12 h-12"
         />
         <div>
@@ -171,5 +179,5 @@ export function SidebarSiswa() {
         </li>
       </ul>
     </div>
-  )
-}
+  );
+};

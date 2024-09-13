@@ -17,6 +17,8 @@ const config: Config = {
         accentColor: "#38A3FF",
         primaryColor: "#0275D8",
         lightGray: "#EEEEEE",
+        lightGrayForm: "#ABABAB",
+        lightWhite: "#F1ECEC",
       },
       zIndex: {
         "-10": "-10",
@@ -24,6 +26,7 @@ const config: Config = {
       spacing: {
         '18': '4.5rem',
         '100': '50rem',
+        '5.4': '5.4rem'
       },
     },
   },
