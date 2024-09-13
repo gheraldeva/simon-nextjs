@@ -43,11 +43,10 @@ const Profile = () => {
           alt="gambar profil"
           height="200"
           width="200"
-          className=""
         />
         <div className="">
-          <h1 className="text-3xl font-bold mt-3">Aditya Putra</h1>
-          <p className="mt-2">NISN : 21414125125</p>
+          <h1 className="text-3xl font-bold mt-5">Aditya Putra</h1>
+          <p className="mt-3">NISN : 21414125125</p>
         </div>
       </div>
     </div>
