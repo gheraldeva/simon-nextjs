@@ -3,7 +3,7 @@ import Profile from "@/components/siswa/Profile";
 import WhiteTemplate from "@/components/WhiteTemplate";
 import React from "react";
 
-const profilePage = () => {
+const pageProfile = () => {
   return (
     <div className="h-screen">
       <SidebarSiswa className="h-[100vh]" />
@@ -16,4 +16,4 @@ const profilePage = () => {
   );
 };
 
-export default profilePage;
+export default pageProfile;
