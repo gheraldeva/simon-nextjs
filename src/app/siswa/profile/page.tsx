@@ -5,8 +5,8 @@ import React from "react";
 
 const profilePage = () => {
   return (
-    <div className="h-screen overflow-hidden">
-<SidebarSiswa className="h-[100vh]" /> 
+    <div className="h-screen">
+      <SidebarSiswa className="h-[100vh]" />
       <div className="-mt-5.4">
         <WhiteTemplate>
           <Profile />
