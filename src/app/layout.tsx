@@ -4,7 +4,7 @@
 import "./globals.css";
 import { Montserrat } from "next/font/google";
 import Navbar from "@/components/admin/Navbar";
-import { SidebarAdmin, SidebarSiswa } from "@/components/SideBar";
+import { SidebarAdmin, SidebarSiswa, SidebarSiswaProfile } from "@/components/SideBar";
 import { usePathname } from "next/navigation";
 
 const montserrat = Montserrat({
@@ -28,7 +28,8 @@ export default function RootLayout({
   const role: string = "admin";
 
   const pathname = usePathname();
-  const isSiswaPage = pathname.startsWith("/siswa/profile");
+  const isSiswaPage = pathname.startsWith("/siswa");
+  const isSiswaPageProfile = pathname.startsWith("/siswa/profile");
   const isDisableNavSidebar = disableNavSidebar.includes(pathname);
   const isSiswaPageWithoutNavSidebar =
     siswaPagesWithoutNavSidebar.includes(pathname);
@@ -40,17 +41,16 @@ export default function RootLayout({
         // style={{ backgroundColor: "#EAEAEA" }}
         suppressHydrationWarning={true}
       >
-        {!isDisableNavSidebar && !isSiswaPageWithoutNavSidebar && (
+        {!isDisableNavSidebar && (
           <>
             <Navbar />
             <div className="flex">
               {isSiswaPage ? <SidebarSiswa /> : <SidebarAdmin />}
-              {children}
+              <div className="">{children}</div>
             </div>
           </>
         )}
 
-        {(isDisableNavSidebar || isSiswaPageWithoutNavSidebar) && children}
       </body>
     </html>
   );

@@ -1,8 +1,9 @@
 "use client";
 
-import { Dropdown, DropdownItem, DropdownMenu, DropdownTrigger } from "@nextui-org/react";
+import { Badge, Dropdown, DropdownItem, DropdownMenu, DropdownTrigger } from "@nextui-org/react";
 import Image from "next/image";
 import Link from "next/link";
+import BellIcon from "../icons/icons";
 
 
 export default function Navbar() {
@@ -15,8 +16,12 @@ export default function Navbar() {
                     <p className="text-white text-[0.6rem]">Solusinya PKL!</p>
                 </div>
             </div>
-            <div className="flex flex-row">
-                <Image className="ml-100" src={"/images/bell.svg"} alt="bell logo" width="20" height="20" />
+            <div className="flex flex-row items-center">
+                <Link href="/notification">
+                    <Badge content="2" color="danger" shape="circle" placement="top-right">
+                        <BellIcon />
+                    </Badge>
+                </Link>
                 <Dropdown>
                     <DropdownTrigger>
                         <div className="cursor-pointer flex items-center">
