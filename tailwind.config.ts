@@ -21,6 +21,7 @@ const config: Config = {
         lightWhite: "#F1ECEC",
         lineColor: "#D2D2D2",
         limeGreen: "#15DF1D",
+        LightGrayDate: "#C7C8CA"
       },
       zIndex: {
         "-10": "-10",
