@@ -3,7 +3,7 @@
 // import type { Metadata } from "next";
 import "./globals.css";
 import { Montserrat } from "next/font/google";
-import Navbar from "@/components/admin/Navbar";
+import Navbar from "@/components/Navbar";
 import { SidebarAdmin, SidebarSiswa } from "@/components/SideBar";
 import { usePathname } from "next/navigation";
 
@@ -25,31 +25,30 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const role: string = "admin";
-
   const pathname = usePathname();
-  const isSiswaPage = pathname.startsWith("/siswa/profile");
+  const isAdminPage = pathname.startsWith("/admin");
+  const isSiswaPage = pathname.startsWith("/siswa");
   const isDisableNavSidebar = disableNavSidebar.includes(pathname);
-  const isSiswaPageWithoutNavSidebar =
-    siswaPagesWithoutNavSidebar.includes(pathname);
+  const isSiswaPageWithoutNavSidebar = siswaPagesWithoutNavSidebar.includes(pathname);
 
   return (
     <html lang="en">
       <body
         className={montserrat.className}
-        // style={{ backgroundColor: "#EAEAEA" }}
         suppressHydrationWarning={true}
       >
+        {/* Jika halaman tidak ada di daftar disable, maka render Navbar dan Sidebar */}
         {!isDisableNavSidebar && !isSiswaPageWithoutNavSidebar && (
           <>
             <Navbar />
             <div className="flex">
-              {isSiswaPage ? <SidebarSiswa /> : <SidebarAdmin />}
+              {isAdminPage ? <SidebarAdmin /> : isSiswaPage ? <SidebarSiswa /> : null}
               {children}
             </div>
           </>
         )}
 
+        {/* Jika halaman di daftar disable, hanya render children */}
         {(isDisableNavSidebar || isSiswaPageWithoutNavSidebar) && children}
       </body>
     </html>

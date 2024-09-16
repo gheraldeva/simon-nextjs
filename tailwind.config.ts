@@ -31,6 +31,9 @@ const config: Config = {
         "100": "50rem",
         "5.4": "5.4rem",
       },
+      boxShadow: {
+        'buttonShadow': '0 4px 10px 0 rgba(183, 183, 183, 0.15)',
+      },
     },
   },
   darkMode: "class", // Dark mode should be outside the theme object
