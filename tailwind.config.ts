@@ -21,6 +21,7 @@ const config: Config = {
         lightWhite: "#F1ECEC",
         lineColor: "#D2D2D2",
         limeGreen: "#15DF1D",
+        LightGrayDate: "#C7C8CA"
       },
       zIndex: {
         "-10": "-10",
@@ -28,7 +29,10 @@ const config: Config = {
       spacing: {
         "18": "4.5rem",
         "100": "50rem",
-        "5.4": "5.4rem",
+        "4.5": "4.5rem",
+      },
+      boxShadow: {
+        'buttonShadow': '0 4px 10px 0 rgba(183, 183, 183, 0.15)',
       },
     },
   },

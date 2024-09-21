@@ -1,15 +1,15 @@
-import MenungguProses from "@/components/siswa/MenungguProses";
+import PilihanAbsen from "@/components/siswa/PilihanAbsen";
 import WhiteTemplate from "@/components/WhiteTemplate";
 import React from "react";
 
-const pageMenungguProses = () => {
+const pagePilihanAbsen = () => {
   return (
     <div className="w-[100%] -mt-4.5">
       <WhiteTemplate>
-        <MenungguProses />
+        <PilihanAbsen />
       </WhiteTemplate>
     </div>
   );
 };
 
-export default pageMenungguProses;
+export default pagePilihanAbsen;

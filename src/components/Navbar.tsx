@@ -3,12 +3,12 @@
 import { Badge, Dropdown, DropdownItem, DropdownMenu, DropdownTrigger } from "@nextui-org/react";
 import Image from "next/image";
 import Link from "next/link";
-import BellIcon from "../icons/icons";
+import BellIcon from "./icons/icons";
 
 
 export default function Navbar() {
     return (
-        <nav className="bg-gradient-to-r fixed w-[100%] from-right-linear px-16 to-left-linear h-[10vh] flex justify-between">
+        <nav className="bg-gradient-to-r fixed w-[100%] z-20 from-right-linear px-16 to-left-linear h-[10vh] flex justify-between">
             <div className="flex items-center">
                 <Image src={"/images/logoSimon.svg"} alt="logo" priority width="70" height="100" />
                 <div>

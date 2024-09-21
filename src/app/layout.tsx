@@ -3,8 +3,8 @@
 // import type { Metadata } from "next";
 import "./globals.css";
 import { Montserrat } from "next/font/google";
-import Navbar from "@/components/admin/Navbar";
-import { SidebarAdmin, SidebarSiswa, SidebarSiswaProfile } from "@/components/SideBar";
+import Navbar from "@/components/Navbar";
+import { SidebarAdmin, SidebarSiswa } from "@/components/SideBar";
 import { usePathname } from "next/navigation";
 
 const montserrat = Montserrat({
@@ -18,39 +18,37 @@ const montserrat = Montserrat({
 // };
 
 const disableNavSidebar = ["/login", "/register"];
-const siswaPagesWithoutNavSidebar = ["/siswa/profile"];
 
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const role: string = "admin";
-
   const pathname = usePathname();
+  const isAdminPage = pathname.startsWith("/admin");
   const isSiswaPage = pathname.startsWith("/siswa");
-  const isSiswaPageProfile = pathname.startsWith("/siswa/profile");
   const isDisableNavSidebar = disableNavSidebar.includes(pathname);
-  const isSiswaPageWithoutNavSidebar =
-    siswaPagesWithoutNavSidebar.includes(pathname);
 
   return (
     <html lang="en">
-      <body
-        className={montserrat.className}
-        // style={{ backgroundColor: "#EAEAEA" }}
-        suppressHydrationWarning={true}
-      >
+      <body className={montserrat.className} suppressHydrationWarning={true}>
+        {/* Jika halaman tidak ada di daftar disable, maka render Navbar dan Sidebar */}
         {!isDisableNavSidebar && (
           <>
             <Navbar />
             <div className="flex">
-              {isSiswaPage ? <SidebarSiswa /> : <SidebarAdmin />}
-              <div className="">{children}</div>
+              {isAdminPage ? (
+                <SidebarAdmin />
+              ) : isSiswaPage ? (
+                <SidebarSiswa />
+              ) : <SidebarAdmin />}
+              {children}
             </div>
           </>
         )}
 
+        {/* Jika halaman di daftar disable, hanya render children */}
+        {isDisableNavSidebar && children}
       </body>
     </html>
   );
