@@ -4,7 +4,7 @@ import DaftarInstansi from "@/components/siswa/DaftarInstansi";
 
 const pageDaftarInstansi = () => {
   return (
-    <div className="h-screen w-full -mt-5">
+    <div className="h-screen w-full -mt-4.5">
       <WhiteTemplate>
         <DaftarInstansi />
       </WhiteTemplate>

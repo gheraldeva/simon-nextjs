@@ -2,7 +2,7 @@ import React from 'react'
 
 const MenungguProses = () => {
   return (
-    <div className="-mt-20">
+    <div className="">
       <div className="">
         <h1 className="font-bold text-3xl">Selamat Datang, Siswa</h1>
         <p>NISN : 21414125125</p>

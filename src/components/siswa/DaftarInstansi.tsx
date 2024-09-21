@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const DaftarInstansi = () => {
   return (
-    <div>
+    <div className="w-[100%]">
       <div className="flex items-center">
         <Link href="/">
           <Image src="/images/leftArrow2.svg" alt="" height={30} width={30} />

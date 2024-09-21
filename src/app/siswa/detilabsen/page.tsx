@@ -4,7 +4,7 @@ import React from "react";
 
 const pageDetilAbsen = () => {
   return (
-    <div className="h-screen w-full -mt-5">
+    <div className="h-screen w-full -mt-4.5">
       <WhiteTemplate>
         <DetilAbsen />
       </WhiteTemplate>

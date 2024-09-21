@@ -7,7 +7,7 @@ const pageProfile = () => {
   return (
     <div className="h-screen">
       <SidebarSiswa className="h-[100vh]" />
-      <div className="-mt-5.4">
+      <div className=" -mt-4.5">
         <WhiteTemplate>
           <Profile />
         </WhiteTemplate>
