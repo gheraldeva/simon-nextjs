@@ -5,13 +5,10 @@ import React from "react";
 
 const pageProfile = () => {
   return (
-    <div className="h-screen">
-      <SidebarSiswa className="h-[100vh]" />
-      <div className=" -mt-4.5">
+      <div className="-mt-4.5 w-[100%]">
         <WhiteTemplate>
           <Profile />
         </WhiteTemplate>
-      </div>
     </div>
   );
 };

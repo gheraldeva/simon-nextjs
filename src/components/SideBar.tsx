@@ -141,7 +141,7 @@ export const SidebarSiswa: React.FC<SideBarProps> = ({ className }) => {
       <hr className="mb-8" />
       <ul className="text-white space-y-6">
         <li>
-          <Link href="/home" className="hover:text-gray-400">
+          <Link href="/siswa/home" className="hover:text-gray-400">
             <div className="flex items-center gap-3">
               <Home />
               <span>Home</span>
@@ -149,7 +149,7 @@ export const SidebarSiswa: React.FC<SideBarProps> = ({ className }) => {
           </Link>
         </li>
         <li>
-          <Link href="/laporan" className="hover:text-gray-400">
+          <Link href="/siswa/laporan" className="hover:text-gray-400">
             <div className="flex items-center gap-3">
               <Laporan />
               <span>Laporan</span>
@@ -157,7 +157,7 @@ export const SidebarSiswa: React.FC<SideBarProps> = ({ className }) => {
           </Link>
         </li>
         <li>
-          <Link href="/profile" className="hover:text-gray-400">
+          <Link href="/siswa/profile" className="hover:text-gray-400">
             <div className="flex items-center gap-3">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -174,6 +174,19 @@ export const SidebarSiswa: React.FC<SideBarProps> = ({ className }) => {
                 />
               </svg>
               <span>Profile</span>
+            </div>
+          </Link>
+        </li>
+        <li>
+          <Link href="/siswa/laporan" className="hover:text-gray-400">
+            <div className="flex items-center gap-3">
+              <Image
+                src="/images/History.svg"
+                alt=""
+                height={18}
+                width={18}
+              ></Image>
+              <span>History Absen</span>
             </div>
           </Link>
         </li>

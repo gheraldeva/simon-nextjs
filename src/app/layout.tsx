@@ -18,7 +18,6 @@ const montserrat = Montserrat({
 // };
 
 const disableNavSidebar = ["/login", "/register"];
-const siswaPagesWithoutNavSidebar = ["/siswa/profile"];
 
 export default function RootLayout({
   children,
@@ -29,27 +28,27 @@ export default function RootLayout({
   const isAdminPage = pathname.startsWith("/admin");
   const isSiswaPage = pathname.startsWith("/siswa");
   const isDisableNavSidebar = disableNavSidebar.includes(pathname);
-  const isSiswaPageWithoutNavSidebar = siswaPagesWithoutNavSidebar.includes(pathname);
 
   return (
     <html lang="en">
-      <body
-        className={montserrat.className}
-        suppressHydrationWarning={true}
-      >
+      <body className={montserrat.className} suppressHydrationWarning={true}>
         {/* Jika halaman tidak ada di daftar disable, maka render Navbar dan Sidebar */}
-        {!isDisableNavSidebar && !isSiswaPageWithoutNavSidebar && (
+        {!isDisableNavSidebar && (
           <>
             <Navbar />
             <div className="flex">
-              {isAdminPage ? <SidebarAdmin /> : isSiswaPage ? <SidebarSiswa /> : null}
+              {isAdminPage ? (
+                <SidebarAdmin />
+              ) : isSiswaPage ? (
+                <SidebarSiswa />
+              ) : null}
               {children}
             </div>
           </>
         )}
 
         {/* Jika halaman di daftar disable, hanya render children */}
-        {(isDisableNavSidebar || isSiswaPageWithoutNavSidebar) && children}
+        {isDisableNavSidebar && children}
       </body>
     </html>
   );
