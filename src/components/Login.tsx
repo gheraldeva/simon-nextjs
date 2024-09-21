@@ -7,7 +7,6 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import Image from "next/image";
 
-// Skema yup
 const schema = yup.object().shape({
   textBody: yup.string().required("username is required"),
   password: yup.string().required("password is required"),
