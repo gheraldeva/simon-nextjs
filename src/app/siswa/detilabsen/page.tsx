@@ -1,13 +1,13 @@
 import DetilAbsen from "@/components/siswa/DetilAbsen";
-import WhiteTemplate from "@/components/WhiteTemplate";
+import { BlueTemplate } from "@/components/WhiteTemplate";
 import React from "react";
 
 const pageDetilAbsen = () => {
   return (
     <div className="h-screen w-full -mt-4.5">
-      <WhiteTemplate>
+      <BlueTemplate>
         <DetilAbsen />
-      </WhiteTemplate>
+      </BlueTemplate>
     </div>
   );
 };

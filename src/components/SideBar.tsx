@@ -9,6 +9,7 @@ import Link from "next/link";
 import Home from "./icons/Home/page";
 import { SideArrow } from "./icons/SideArrow/page";
 import ArrowDown from "./icons/ArrowDown/page";
+import { LaporanIcon, LaporanSmallIcon } from "./icons/icons";
 
 interface SideBarProps {
   className?: string;
@@ -31,16 +32,11 @@ export function SidebarAdmin() {
       </div>
       <hr className="mb-8" />
       <div className="w-full">
+        <div className="flex gap-3 mx-2 mb-1 text-white">
+          <Home />
+          <Link href="/admin/"><p>Home</p></Link>
+          </div>
         <Accordion isCompact>
-          <AccordionItem
-            startContent={<Home />}
-            indicator
-            isDisabled
-            className="text-white"
-            key="0"
-            aria-label="Home"
-            title={<p className="text-white">Home</p>}
-          ></AccordionItem>
           <AccordionItem
             startContent={<MasterData />}
             className="text-white"
@@ -52,8 +48,7 @@ export function SidebarAdmin() {
             <ul className="">
               <hr />
               <li>
-                <Link href="/masterdata/datasiswa">
-                  <p className="text-white">Data Siswa</p>
+                <Link href="/admin/masterdata/datasiswa">
                   <p className="">Data Siswa</p>
                 </Link>
               </li>
@@ -187,6 +182,128 @@ export const SidebarSiswa: React.FC<SideBarProps> = ({ className }) => {
                 width={18}
               ></Image>
               <span>History Absen</span>
+            </div>
+          </Link>
+        </li>
+      </ul>
+    </div>
+  );
+};
+export const SidebarGuru: React.FC<SideBarProps> = ({ className }) => {
+  return (
+    <div
+      className={`w-[18%] h-[90vh] fixed bottom-0 bg-[#1B1D2A] py-10 px-4 ${className}`}
+    >
+      <div className="flex items-center text-white gap-3 mb-5">
+        <Image
+          src="/images/profileAdmin.svg"
+          alt="Admin Logo"
+          width={45}
+          height={60}
+          className="w-12 h-12"
+        />
+        <div>
+          <h3 className="text-lg font-semibold">Guru Pembimbing</h3>
+          <h6 className="text-sm">SMKN 2 MATARAM</h6>
+        </div>
+      </div>
+      <hr className="mb-8" />
+      <ul className="text-white space-y-6">
+        <li>
+          <Link href="/guru/" className="hover:text-gray-400">
+            <div className="flex items-center gap-3">
+              <Home />
+              <span>Home</span>
+            </div>
+          </Link>
+        </li>
+        <li>
+          <Link href="/guru/absensiswa" className="hover:text-gray-400">
+            <div className="flex items-center gap-3">
+              <LaporanSmallIcon />
+              <span>Absen Siswa</span>
+            </div>
+          </Link>
+        </li>
+        <li>
+          <Link href="/guru/profile" className="hover:text-gray-400">
+            <div className="flex items-center gap-3">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth="2"
+                stroke="currentColor"
+                className="w-6 h-6"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M5.121 18.364A9 9 0 0112 15c2.39 0 4.584.93 6.121 2.364M15 11a3 3 0 11-6 0 3 3 0 016 0zm-3 9a9 9 0 110-18 9 9 0 010 18z"
+                />
+              </svg>
+              <span>Profile</span>
+            </div>
+          </Link>
+        </li>
+      </ul>
+    </div>
+  );
+};
+export const SidebarDudi: React.FC<SideBarProps> = ({ className }) => {
+  return (
+    <div
+      className={`w-[18%] h-[90vh] fixed bottom-0 bg-[#1B1D2A] py-10 px-4 ${className}`}
+    >
+      <div className="flex items-center text-white gap-3 mb-5">
+        <Image
+          src="/images/profileAdmin.svg"
+          alt="Admin Logo"
+          width={45}
+          height={60}
+          className="w-12 h-12"
+        />
+        <div>
+          <h3 className="text-lg font-semibold">Pembimbing Dudi</h3>
+          <h6 className="text-sm">SMKN 2 MATARAM</h6>
+        </div>
+      </div>
+      <hr className="mb-8" />
+      <ul className="text-white space-y-6">
+        <li>
+          <Link href="/dudi/" className="hover:text-gray-400">
+            <div className="flex items-center gap-3">
+              <Home />
+              <span>Home</span>
+            </div>
+          </Link>
+        </li>
+        <li>
+          <Link href="/dudi/absensiswa" className="hover:text-gray-400">
+            <div className="flex items-center gap-3">
+              <LaporanSmallIcon />
+              <span>Absen Siswa</span>
+            </div>
+          </Link>
+        </li>
+        <li>
+          <Link href="/dudi/profile" className="hover:text-gray-400">
+            <div className="flex items-center gap-3">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth="2"
+                stroke="currentColor"
+                className="w-6 h-6"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M5.121 18.364A9 9 0 0112 15c2.39 0 4.584.93 6.121 2.364M15 11a3 3 0 11-6 0 3 3 0 016 0zm-3 9a9 9 0 110-18 9 9 0 010 18z"
+                />
+              </svg>
+              <span>Profile</span>
             </div>
           </Link>
         </li>

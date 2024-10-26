@@ -6,7 +6,7 @@ import React, { useState, useCallback } from "react";
 import { useDropzone } from 'react-dropzone';
 import toast from "react-hot-toast";
 
-const AbsenMasuk = () => {
+const AbsenKeluar = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null); // Untuk menyimpan base64 dari gambar
   const [isFullScreen, setIsFullScreen] = useState<boolean>(false);
 
@@ -73,7 +73,7 @@ const AbsenMasuk = () => {
 
           // Kirim data ke API menggunakan axios
           axios
-            .post("http://localhost:2008/siswa/absen/absen-masuk", formData, {
+            .post("http://localhost:2008/siswa/absen/absen-pulang", formData, {
               headers: {
                 "Content-Type": "multipart/form-data",
               },
@@ -81,7 +81,7 @@ const AbsenMasuk = () => {
             })
             .then((response) => {
               console.log("Upload berhasil:", response.data);
-              toast.success("Sukses Absen Masuk");
+              toast.success("Sukses Absen Pulang!");
               window.location.href = "/siswa/home";
             })
             .catch((error) => {
@@ -91,7 +91,7 @@ const AbsenMasuk = () => {
         },
         (error) => {
           console.error("Error mendapatkan lokasi:", error);
-          toast.error(error.message);
+          toast.error("Error mendapatkan lokasi.");
         }
       );
     } else {
@@ -122,7 +122,7 @@ const AbsenMasuk = () => {
         <Link href="/siswa/pilihanabsen">
           <Image src="/images/leftArrow2.svg" alt="" height={30} width={30} />
         </Link>
-        <h1 className="font-bold text-2xl mx-auto">Absen Masuk</h1>
+        <h1 className="font-bold text-2xl mx-auto">Absen Pulang</h1>
       </div>
 
       <div className="flex justify-center items-center mt-6 text-white">
@@ -173,7 +173,7 @@ const AbsenMasuk = () => {
           </div>
 
           <button onClick={() => postGambar()} className="text-accentColor bg-white mt-4 p-2 w-[100%] rounded-full">
-            Absen Masuk
+            Absen Pulang
           </button>
         </div>
       </div>
@@ -200,4 +200,4 @@ const AbsenMasuk = () => {
   );
 };
 
-export default AbsenMasuk;
+export default AbsenKeluar;

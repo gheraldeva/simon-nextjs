@@ -4,7 +4,7 @@
 import "./globals.css";
 import { Montserrat } from "next/font/google";
 import Navbar from "@/components/Navbar";
-import { SidebarAdmin, SidebarSiswa } from "@/components/SideBar";
+import { SidebarAdmin, SidebarDudi, SidebarGuru, SidebarSiswa } from "@/components/SideBar";
 import { usePathname } from "next/navigation";
 
 const montserrat = Montserrat({
@@ -27,12 +27,13 @@ export default function RootLayout({
   const pathname = usePathname();
   const isAdminPage = pathname.startsWith("/admin");
   const isSiswaPage = pathname.startsWith("/siswa");
+  const isGuruPage = pathname.startsWith("/guru");
+  const isDudiPage = pathname.startsWith("/dudi");
   const isDisableNavSidebar = disableNavSidebar.includes(pathname);
 
   return (
     <html lang="en">
       <body className={montserrat.className} suppressHydrationWarning={true}>
-        {/* Jika halaman tidak ada di daftar disable, maka render Navbar dan Sidebar */}
         {!isDisableNavSidebar && (
           <>
             <Navbar />
@@ -41,7 +42,9 @@ export default function RootLayout({
                 <SidebarAdmin />
               ) : isSiswaPage ? (
                 <SidebarSiswa />
-              ) : <SidebarAdmin />}
+              ) : isGuruPage ? (
+                <SidebarGuru />
+              ) : isDudiPage ? <SidebarDudi /> : <SidebarAdmin />}
               {children}
             </div>
           </>

@@ -1,21 +1,49 @@
-import Link from "next/link";
-import React from "react";
+"use client";
+
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+import {BelumInstansi, SudahDiterima, SudahInstansi} from "./BelumInstansi";
+
 
 const MenungguProses = () => {
+  const [profile, setProfile]: any = useState([]);
+  const [instansi, setInstansi]: any = useState([]);
+  const [sudahAjukan, setSudahAjukan] = useState(false);
+  const [dudi, setDudi]: any = useState([]);
+  const [diterima, setDiterima] = useState(false);
+
+  useEffect(() => {
+    document.title = "Siswa - Home";
+    axios.get("http://localhost:2008/siswa/profile", { withCredentials: true }).then((res) => {
+      setProfile(res.data.data)
+    })
+    axios.get("http://localhost:2008/siswa/pengajuan_pkl/last/get", { withCredentials: true }).then((res) => {
+      if(res.data.data.status === "diterima"){
+        setDiterima(true)
+      }
+      setSudahAjukan(true)
+      setInstansi(res.data.data)
+      setDudi(res.data.data.dudi)
+    }).catch((err) => {
+      setSudahAjukan(false)
+      console.log(err);
+    })
+  },[])
+  console.log(diterima);
+  
   return (
-    <div className="">
+    <div>
       <div className="">
-        <h1 className="font-bold text-3xl">Selamat Datang, Siswa</h1>
-        <p>NISN : 21414125125</p>
+        <h1 className="font-bold text-3xl">Selamat Datang, {profile.nama}</h1>
+        <p>NISN : {profile.nis}</p>
       </div>
-      <div className="bg-accentColor bg-[url('/images/logoLowOpacity.png')] bg-no-repeat bg-center bg-cover p-20 mt-10 rounded-xl flex flex-col items-center">
-        <h1 className="w-full text-center text-white text-xl">
-          Belum ada instansi yang dipilih
-        </h1>
-        <Link href="/siswa/daftarinstansi" className="w-auto py-2 px-12 mt-4 mx-auto text-white border border-white bg-transparent hover:bg-white hover:text-accentColor transition duration-300 ease-in-out rounded-full">
-          Pilih
-        </Link>
-      </div>
+      { diterima ? (
+        <SudahDiterima/>
+      ): sudahAjukan ? (
+        <SudahInstansi/>
+      ) : (
+        <BelumInstansi/>
+      )}
     </div>
   );
 };
